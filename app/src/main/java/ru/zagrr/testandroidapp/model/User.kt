@@ -1,9 +1,13 @@
-package ru.zagrr.testapp.model
+package ru.zagrr.testandroidapp.model
 
+import android.os.Parcelable
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
 @Entity(tableName = "users")
+@Parcelize
 data class User(
 
     @PrimaryKey(autoGenerate = false)
@@ -14,4 +18,4 @@ data class User(
     val email : String?,
     val phone : String?,
     val website : String?,
-)
+): Parcelable

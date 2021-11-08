@@ -1,4 +1,4 @@
-package ru.zagrr.testapp
+package ru.zagrr.testandroidapp
 
 import org.junit.Test
 

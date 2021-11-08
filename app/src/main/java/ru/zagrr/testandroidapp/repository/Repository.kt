@@ -1,9 +1,10 @@
-package ru.zagrr.testapp.repository
+package ru.zagrr.testandroidapp.repository
 
 import android.util.Log
 import retrofit2.Response
-import ru.zagrr.testapp.repository.db.DocumentDao
-import ru.zagrr.testapp.repository.network.NetworkApi
+import ru.zagrr.testandroidapp.model.User
+import ru.zagrr.testandroidapp.repository.db.DocumentDao
+import ru.zagrr.testandroidapp.repository.network.NetworkApi
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -27,20 +28,16 @@ class Repository @Inject constructor(private val networkApi: NetworkApi, private
         return "Неизвестная ошибка";
     }
 
-    fun getUsers() = documentDao.getUsers()
+    fun getUsers(searchQuery : String) = documentDao.getUsers(searchQuery)
 
     suspend fun refreshUsers() {
-
-        Log.d("zagrrLog", "Получаем пользователей с сервера...")
 
         val response = networkApi.getUsers()
 
         if (response.isSuccessful) {
 
             val users = response.body() ?: throw Exception("Неизвестная ошибка")
-
-            Log.d("zagrrLog", "Сохраняем в локальную БД...")
-            documentDao.saveUsers(users)
+            documentDao.refreshUsers(users)
         }
         else
             throw Exception(
@@ -48,7 +45,8 @@ class Repository @Inject constructor(private val networkApi: NetworkApi, private
             )
     }
 
-    suspend fun deleteAllUsers() {
-        documentDao.deleteAllUsers()
-    }
+    suspend fun deleteUsers(users: List<User>) = documentDao.deleteUsers(users)
+
+    suspend fun saveUsers(users: List<User>) = documentDao.saveUsers(users)
+
 }

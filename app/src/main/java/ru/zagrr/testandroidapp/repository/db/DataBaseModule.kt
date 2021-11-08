@@ -1,4 +1,4 @@
-package ru.zagrr.testapp.repository.db
+package ru.zagrr.testandroidapp.repository.db
 
 import android.content.Context
 import androidx.room.Room

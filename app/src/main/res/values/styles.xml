@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+
+        <item name="actionModeBackground">@color/design_default_color_primary</item>
+        <item name="actionModeCloseDrawable">@drawable/ic_close</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ListItemPrimary">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/abc_text_size_medium_material</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ListItemSecondary">
+        <item name="android:textSize">@dimen/abc_text_size_small_material</item>
+        <item name="android:textColor">@color/design_default_color_secondary_variant</item>
+    </style>
+
+    <style name="ListItemNormal">
+        <item name="android:textSize">@dimen/abc_text_size_caption_material</item>
+    </style>
+
+</resources>

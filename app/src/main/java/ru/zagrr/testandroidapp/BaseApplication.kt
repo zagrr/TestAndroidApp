@@ -1,4 +1,4 @@
-package ru.zagrr.testapp
+package ru.zagrr.testandroidapp
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

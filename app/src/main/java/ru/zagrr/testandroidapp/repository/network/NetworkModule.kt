@@ -1,15 +1,11 @@
-package ru.zagrr.testapp.repository.network
+package ru.zagrr.testandroidapp.repository.network
 
-import android.content.Context
-import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Credentials
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
